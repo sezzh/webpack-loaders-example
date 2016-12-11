@@ -1,0 +1,5 @@
+dist/*.js
+!dist/
+!dist/bin/
+node_modules/
+dist/assets/
