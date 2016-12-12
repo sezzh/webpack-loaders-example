@@ -13,8 +13,8 @@ let webpackOpts = {
     app: './index'
   },
   output: {
-    path: path.join(__dirname, 'dist', 'bin'),
-    filename: '[name].bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bin/[name].bundle.js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
@@ -36,6 +36,17 @@ let webpackOpts = {
       {
         test: /\.styl$/,
         loader: 'style-loader!css-loader!stylus-loader'
+      },
+      {
+        // loader for assets
+        // the path is taken from the "output.path opt."
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=fonts/[name].[ext]'
+      },
+      {
+        // loader for assets
+        test: /\.gif$/,
+        loader: 'file?name=[name].[ext]'
       }
     ]
   }

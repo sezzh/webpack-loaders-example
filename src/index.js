@@ -1,9 +1,17 @@
 import 'normalize.css'
 import './stylus/styles.styl'
-// import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import $ from 'jquery'
-import 'imports?jQuery=jquery!owl.carousel'
+// This is the import settings in order to charge a jquery
+// plugin into the bundle.
+import 'imports-loader?$=jquery,jQuery=jquery,this=>window!slick-carousel/slick/slick.js'
 
 (function () {
-  $('.owl-carousel').owlCarousel()
+  // so we can use the plugin on this scope :)
+  $('.js-multi-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  })
 })()

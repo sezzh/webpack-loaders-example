@@ -1,5 +1,10 @@
-dist/*.js
+dist/bin/**
+dist/assets/img/**
+dist/*.gif
+dist/fonts/**
 !dist/
 !dist/bin/
+!dist/fonts/
+!dist/assets/
+!dist/assets/img
 node_modules/
-dist/assets/
